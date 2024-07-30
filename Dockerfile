@@ -9,8 +9,8 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN git clone https://github.com/Fujikaze-njn/TKM-bot  /root/Fujikaze-njn
-WORKDIR /root/Fujikaze-njn/
+RUN git clone https://github.com/Cod3Uchiha/TKM-bot /root/TKM-bot
+WORKDIR /root/TKM-bot/
 
 
 COPY package.json .
@@ -19,6 +19,6 @@ RUN npm install --legacy-peer-deps
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5000
 
-CMD ["npm","start" ]
+CMD ["node", "index.js"]
